@@ -19,6 +19,23 @@ def seachPlayer(firstname:any):
     con.close()
 
 
+#add players
+
+def addplayers(first_name, last_name, playernumber, points):
+  con.connect()
+  cursor = con.cursor()
+  print(first_name, last_name, playernumber, points)
+  adduser = "INSERT INTO jamie23to24 (first_name, last_name, playernumber, points) VALUES (%s,%s,%s,%s)"
+  val = (first_name, last_name, playernumber, points)
+  cursor.execute(adduser, val)
+  con.commit()
+  con.close()
+  
+
+
+
+
+
 
 # to list all players
 def listAllPlayers():
@@ -53,7 +70,11 @@ while (i < 6):
     seachPlayer(lookup)
     
   elif select == '3':
-      query3 = "insert into haltonstats (id, first_name, last_name, playernumber, points) values (11, 'jolie', 'chen', 13, 0);"
+      firstname = input("What is the first name?")
+      lastname = input("What is the last name?")
+      playernumber = input("What is the player number?")
+      points = input("How many points did they score?")
+      addplayers(firstname,lastname,playernumber,points)
       print("\n")
       print("record added successfully")
       print("\n")
