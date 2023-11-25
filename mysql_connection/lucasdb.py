@@ -82,5 +82,9 @@ while (i < 6):
     i=6
     con.close()
 
-# TASK 1,  Use a loop to keep this program running, until user pick exit
-# TASK 2,  let User to add new player to database
+# TASK 1, Use a loop to keep this program running, until user pick exit
+# TASK 2, let User to add new player to database
+
+# Assignment weekend Nov 25-26
+# TASK 3. New function to delete player
+# TASK 4. List playr by POINTs rank 
