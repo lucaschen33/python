@@ -1,0 +1,6 @@
+host_name = 'localhost'
+user_name = 'root'
+user_pass = 'lucas2009'
+db_name = 'haltonstats'
+queryone = 'select * from jamie23to24 where first_name ='
+queryall = 'select * from jamie23to24'
