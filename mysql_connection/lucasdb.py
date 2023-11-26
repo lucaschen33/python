@@ -38,13 +38,27 @@ def deleteplayers():
   con.connect()
   cursor = con.cursor()
   deleteuser = "delete from jamie23to24 where id = %s"
-  deleteval =(deleteid,)
+  deleteval=(deleteid,)
   cursor.execute(deleteuser, deleteval)
   con.commit()
   con.close()
   
 
+# list player from greatest to least in pts
 
+
+def listorder():
+  con.connect()
+  cursor = con.cursor()
+  cursor.execute(querylist)
+  records=cursor.fetchall()
+  if records:
+    for row in records:
+      print(row)
+  else:
+    print("Team dismissed!")
+    cursor.close()
+    con.close()
 
 # to list all players
 def listAllPlayers():
@@ -96,6 +110,15 @@ while (i < 6):
   elif select == '5':
       deleteid = input("What is the player id of the player you would like to delete?")
       deleteplayers()
+      print("\n")
+      print("record deleted successfully")
+      print("\n")
+  
+  
+  elif select == '6':
+    listorder()
+    
+    
 
 # TASK 1, Use a loop to keep this program running, until user pick exit
 # TASK 2, let User to add new player to database
