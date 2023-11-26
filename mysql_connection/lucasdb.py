@@ -32,8 +32,17 @@ def addplayers(first_name, last_name, playernumber, points):
   con.close()
   
 
+# delete players
 
-
+def deleteplayers():
+  con.connect()
+  cursor = con.cursor()
+  deleteuser = "delete from jamie23to24 where id = %s"
+  deleteval =(deleteid,)
+  cursor.execute(deleteuser, deleteval)
+  con.commit()
+  con.close()
+  
 
 
 
@@ -60,6 +69,8 @@ while (i < 6):
   print("2. Lookup a player")
   print("3. Add a player")
   print("4. Exit")
+  print("5. Delete a player")
+  print("6. List players by highest to lowest amount of points")
   select = input("Please select a number corosponding to your selection:")
   if select == '1':
     listAllPlayers()
@@ -81,6 +92,10 @@ while (i < 6):
   elif select == '4':
     i=6
     con.close()
+    
+  elif select == '5':
+      deleteid = input("What is the player id of the player you would like to delete?")
+      deleteplayers()
 
 # TASK 1, Use a loop to keep this program running, until user pick exit
 # TASK 2, let User to add new player to database
