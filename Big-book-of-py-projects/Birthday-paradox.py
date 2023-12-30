@@ -26,16 +26,16 @@ MONTHS = ('jan', 'feb', 'mar','apr', 'may', 'jun', 'jul', 'aug,','sep','oct', 'n
 while True:
     response = input('''"How many birthdays should I generate?(Max is 50)
                ''')
-    if response.isdecimal() and (0 < int(response) <= 50):
-        numBdays = int(response)
-        
-    else:
-        print("That is not an integer. Please try again.")
-        response = input('''"How many birthdays should I generate?(Max is 50)
-               ''')
-    if response.isdecimal() and (0 < int(response) <= 50):
+    if response.isdecimal() and (1 <= int(response) <= 50):
         numBdays = int(response)
         break
+    else:
+        print("Please only type integers under 50 and over 0.")
+        response = input('''"How many birthdays should I generate?(Max is 50)
+               ''')
+
+        
+    
 
 print('Here are', numBdays, 'birthdays:')
 birthdays = getBirthdays(numBdays)
