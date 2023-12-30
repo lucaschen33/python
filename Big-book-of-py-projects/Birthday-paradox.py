@@ -28,6 +28,13 @@ while True:
                ''')
     if response.isdecimal() and (0 < int(response) <= 50):
         numBdays = int(response)
+        
+    else:
+        print("That is not an integer. Please try again.")
+        response = input('''"How many birthdays should I generate?(Max is 50)
+               ''')
+    if response.isdecimal() and (0 < int(response) <= 50):
+        numBdays = int(response)
         break
 
 print('Here are', numBdays, 'birthdays:')
