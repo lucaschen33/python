@@ -1,4 +1,4 @@
-message = input('''What is the message you would like to decrypt(Please only input messages from Caesar Cipher).''')
+message = input('''What is the message you would like to decrypt(Please only input messages from Caesar Cipher).   > ''')
 
 SYMBOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
