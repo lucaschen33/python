@@ -16,4 +16,3 @@ for key in range(len(SYMBOL)):
         else:
             translated = translated + symbol
     print('Key #{}: {}'.format(key, translated))
-        
