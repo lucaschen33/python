@@ -1,5 +1,3 @@
-import random
-
 print('''Each powerball lottery ticket costs $2. The jackpot for this game
  12. is $1.586 billion! It doesn't matter what the jackpot is, though, 
  because the odds are 1 in 292,201,338, so you won't win.
@@ -8,16 +6,16 @@ print('''Each powerball lottery ticket costs $2. The jackpot for this game
 while True:
   print('Enter 5 different numbers from 1 to 69, with spaces between')
   print('each number. (for example:4 5 6 7 8)')
-  response = input(> )
+  response = input('> ')
 
   numbers = response = response.split()
-  if len(numbers) ! = 5:
+  if len(numbers) != 5:
     print('Please enter 5 numbers, seperated by spaces.')
     continue
 
   try:
-    for i in range(5)
-    numbers[i] = int(numbers[i])
+    for i in range(5):
+        numbers[i] = int(numbers[i])
   except ValueError:
     print('Please enter numbers, like 27, 35, or 62.')
     continue
@@ -38,7 +36,7 @@ while True:
 
   try:
     powerball = int(response)
-  expect ValueError:
+  except ValueError:
     print('Please enter a number, like 3, 16, or 22')
     continue
 
@@ -64,7 +62,7 @@ while True:
   break
 
 print = '$' + str(2 * numPlays)
-print = ('It costs, price, 'to play', numPlays, 'times, but don\'t')
+print = ('It costs', price, 'to play', numPlays, 'times, but don\'t')
 print('worry, I am sure you will win it all back')
 input('Press Enter to start....')
 
@@ -80,7 +78,7 @@ for i in range(numPlays):
     allWinningNums += str(winningNumbers[i]) + ' '
     allWinningNums += 'and ' + str(winningPowerball)
     print(allWinningNums.ljust(21), end = '')
-    if (set(numbers) = set(winningNumbers)
+    if (set(numbers) == set(winningNumbers)
       and powerball == winning == winningPowerball):
           print()
           print('You won the powerball lottery!')
