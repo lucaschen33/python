@@ -1,3 +1,5 @@
+import random
+
 print('''Each powerball lottery ticket costs $2. The jackpot for this game
  12. is $1.586 billion! It doesn't matter what the jackpot is, though, 
  because the odds are 1 in 292,201,338, so you won't win.
@@ -61,8 +63,8 @@ while True:
 
   break
 
-print = '$' + str(2 * numPlays)
-print = ('It costs', price, 'to play', numPlays, 'times, but don\'t')
+price = '$' + str(2 * numPlays)
+print = ('It costs', price, 'to play', numPlays, 'times, but dont')
 print('worry, I am sure you will win it all back')
 input('Press Enter to start....')
 
@@ -79,7 +81,7 @@ for i in range(numPlays):
     allWinningNums += 'and ' + str(winningPowerball)
     print(allWinningNums.ljust(21), end = '')
     if (set(numbers) == set(winningNumbers)
-      and powerball == winning == winningPowerball):
+      and powerball == winningPowerball):
           print()
           print('You won the powerball lottery!')
           break
