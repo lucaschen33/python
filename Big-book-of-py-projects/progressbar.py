@@ -26,6 +26,12 @@ def getProgressBar(progress, total, barWidth=40):
     if progress > total:
         progress = total
         BAR = Fore.GREEN+"█"
+    if progress > 1024:
+        BAR = Fore.LIGHTRED_EX+"█"
+    if progress > 2048:
+        BAR = Fore.LIGHTWHITE_EX+"█"
+    if progress > 3072:
+        BAR = Fore.LIGHTYELLOW_EX+"█"
     if progress < 0:
         progress = 0
         
