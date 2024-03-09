@@ -1,6 +1,10 @@
 import random, time
+from colorama import init, Fore, Back, Style
 
-BAR = chr(9608)
+
+def getRedColor():
+    return random.choice('red')
+
 
 def main():
     print('Progress Bar Simulation, by Al Sweigart')
@@ -10,14 +14,18 @@ def main():
         bytesDownloaded += random.randint(0, 100)
         barStr = getProgressBar(bytesDownloaded, downloadSize)
         print(barStr, end='', flush=True)
-        time.sleep(0.2)
+        time.sleep(0.1)
         print('\b' * len(barStr), end='', flush=True)
+    print(barStr)
+    
         
 def getProgressBar(progress, total, barWidth=40):
+    BAR = Fore.BLUE+"█"
     progressBar = ''
     progressBar += '['
     if progress > total:
         progress = total
+        BAR = Fore.GREEN+"█"
     if progress < 0:
         progress = 0
         
